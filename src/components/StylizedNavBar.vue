@@ -48,18 +48,18 @@ export default {
 @use '../styles/partials/mixins' as *;
     nav {
         background-color: $primary-color;
-        padding: 50px 0;
+        padding: 20px 0;
         .container {
             @include centerFlex('horizontal');
-            justify-content: space-between;
+            justify-content: space-around;
             .card {
                 color: white;
-                @include centerFlex();
+                
+                @include centerFlex('vertical');
                 img {
-                    width: 50px;
+                    transform: scale(.5);
                 }
                 span {
-                    padding-left: 10px;
                     text-transform: uppercase;
                 }
             }
