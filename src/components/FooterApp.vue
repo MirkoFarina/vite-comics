@@ -155,7 +155,7 @@ export default {
     footer {
         background-image: url('../assets/img/footer-bg.jpg');
         background-size: cover;
-        padding: 30px 0;
+        padding: 25px 0;
         overflow: hidden;
         position: relative;
     }
