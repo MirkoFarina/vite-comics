@@ -1,6 +1,52 @@
 <script>
 export default {
   name: "HeaderApp",
+  data(){
+    return {
+      navHeader: [
+        {
+          text: 'characters',
+          current: false
+        },
+        {
+          text: 'comics',
+          current: false
+        },
+        {
+          text: 'movies',
+          current: false
+        },
+        {
+          text: 'tv',
+          current: false
+        },
+        {
+          text: 'games',
+          current: false
+        },
+        {
+          text: 'collectibles',
+          current: false
+        },
+        {
+          text: 'videos',
+          current: false
+        },
+        {
+          text: 'fans',
+          current: false
+        },
+        {
+          text: 'news',
+          current: false
+        },
+        {
+          text: 'shop',
+          current: false
+        }
+      ]
+    }
+  }
 };
 </script>
 
@@ -13,35 +59,11 @@ export default {
       </div>
       <nav>
         <ul>
-          <li>
-            <a href="#"> Characters </a>
-          </li>
-          <li>
-            <a href="#"> Comics </a>
-          </li>
-          <li>
-            <a class="active" href="#"> Movies </a>
-          </li>
-          <li>
-            <a href="#"> tv </a>
-          </li>
-          <li>
-            <a href="#"> games </a>
-          </li>
-          <li>
-            <a href="#"> collectibles </a>
-          </li>
-          <li>
-            <a href="#"> videos </a>
-          </li>
-          <li>
-            <a href="#"> fans </a>
-          </li>
-          <li>
-            <a href="#"> news </a>
-          </li>
-          <li>
-            <a href="#"> shop </a>
+          <li
+          v-for="(link, index) in navHeader"
+          :key="index"
+          >
+            <a href="#"> {{link.text}} </a>
           </li>
         </ul>
       </nav>
