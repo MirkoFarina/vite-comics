@@ -7,12 +7,18 @@ export default {
 
 <template>
   <div>
-    M
+    <p>--------> CONTENT GOES HERE </p>
   </div>
 </template>
 
 
 
-<style>
-
+<style lang="scss" scoped>
+@use '../styles/partials/mixins' as *;
+    div {
+        color: white;
+        background-color: #1C1C1C;
+        height: 200px;
+        @include centerFlex;
+    }
 </style>

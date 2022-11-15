@@ -2,22 +2,25 @@
 import HeaderApp from "./components/HeaderApp.vue";
 import MainApp from "./components/MainApp.vue";
 import FooterApp from "./components/FooterApp.vue";
+import StylizedNavBar from "./components/StylizedNavBar.vue"
 export default {
   name: "App",
   components: {
     HeaderApp,
     MainApp,
     FooterApp,
+    StylizedNavBar
   },
 };
 </script>
 
 <template>
-    <div class="container">
-        <HeaderApp />
-        <MainApp />
-        <FooterApp />
-    </div>
+    
+    <HeaderApp />
+    <MainApp />
+    <StylizedNavBar />
+    <FooterApp />
+    
 </template>
 
 
