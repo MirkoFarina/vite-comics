@@ -85,6 +85,9 @@ export default {
                     font-size: .8rem;
                     color: white;
                     text-transform: uppercase;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
            }

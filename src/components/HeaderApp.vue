@@ -10,7 +10,7 @@ export default {
         },
         {
           text: 'comics',
-          current: false
+          current: true
         },
         {
           text: 'movies',
@@ -63,7 +63,11 @@ export default {
           v-for="(link, index) in navHeader"
           :key="index"
           >
-            <a href="#"> {{link.text}} </a>
+            <a 
+            :class="{'active' : link.current}" 
+            href="#"> 
+                {{link.text}} 
+            </a>
           </li>
         </ul>
       </nav>
@@ -90,17 +94,24 @@ export default {
     height: 100%;
     @include centerFlex;
     ul {
-      @include centerFlex("horizzontal");
+        height: 100%;
+        @include centerFlex();
       li {
+        height: 100%;
         padding-left: 20px;
         a {
+          @include centerFlex();
+          height: 100%;
           color: #464646;
           text-transform: uppercase;
           font-weight: 600;
           font-size: 0.9rem;
+          height: 100%;
           &.active {
             color: $primary-color;
+            border-bottom: 5px solid $primary-color;
           }
+          
         }
       }
     }

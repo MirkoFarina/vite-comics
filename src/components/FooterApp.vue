@@ -177,6 +177,9 @@ export default {
             a {
                 color: #959595;
                 font-size: .8rem;
+                &:hover {
+                        text-decoration: underline;
+                    }
             }
         }
     }
