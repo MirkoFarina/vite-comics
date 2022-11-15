@@ -110,6 +110,7 @@ export default {
           &.active {
             color: $primary-color;
             border-bottom: 5px solid $primary-color;
+            box-shadow: inset -4px -18px 0px -17px $primary-color;
           }
           
         }
