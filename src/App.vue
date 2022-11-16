@@ -23,4 +23,5 @@ export default {
 
 <style lang="scss">
     @use "./styles/general" as *;
+    @use "./styles/partials/mediaquery" as *;
 </style>
