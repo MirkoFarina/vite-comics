@@ -1,35 +1,10 @@
 <script>
+import  showCaseNav from '../data/showcase-nav';
 export default {
     name: 'StylizedNavBar',
     data (){
         return {
-            contentNav: [
-                {
-                    imgUrl: 'buy-comics-digital-comics.png',
-                    text: 'digital comics',
-                    current: false
-                },
-                {
-                    imgUrl: 'buy-comics-merchandise.png',
-                    text: 'dc merchandise',
-                    current: false
-                },
-                {
-                    imgUrl: 'buy-comics-subscriptions.png',
-                    text: 'subscription',
-                    current: false
-                },
-                {
-                    imgUrl: 'buy-comics-shop-locator.png',
-                    text: 'comic shop locator',
-                    current: false
-                },
-                {
-                    imgUrl: 'buy-dc-power-visa.svg',
-                    text: 'dc power visa',
-                    current: false
-                }
-            ]
+            showCaseNav
         }
     },
     methods: {
@@ -45,13 +20,13 @@ export default {
         <div class="container">
             <ul>
                 <li
-                v-for="(link, index) in contentNav"
+                v-for="(link, index) in showCaseNav"
                 :key="index"
                 >
                     <div class="img">
                         <img :src="getImagePath(link.imgUrl)" :alt="link.text">
                     </div>
-                    <a href="#">
+                    <a :href="link.href">
                         {{link.text}}
                     </a>
                 </li>

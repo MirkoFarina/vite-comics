@@ -1,11 +1,20 @@
 <script>
 import StylizedNavBar from "./StylizedNavBar.vue";
 import WhereFindUs from "./WhereFindUs.vue";
+import { navDc, navDcComics, navShop, navSites} from "../data/nav-footer";
 export default {
     name:'FooterApp',
     components: {
         StylizedNavBar,
         WhereFindUs
+    },
+    data (){
+        return {
+            navDc,
+            navDcComics,
+            navShop,
+            navSites
+        }
     }
 }
 </script>
@@ -21,26 +30,11 @@ export default {
                         dc comics
                     </h4>
                     <ul>
-                        <li>
-                            <a href="#">Characters</a>
-                        </li>
-                        <li>
-                            <a href="#">Comics</a>
-                        </li>
-                        <li>
-                            <a href="#">Movies</a>
-                        </li>
-                        <li>
-                            <a href="#">TV</a>
-                        </li>
-                        <li>
-                            <a href="#">Games</a>
-                        </li>
-                        <li>
-                            <a href="#">Videos</a>
-                        </li>
-                        <li>
-                            <a href="#">News</a>
+                        <li 
+                        v-for="(item, index) in navDcComics"
+                        :key="index"
+                        >
+                            <a :href="item.href">{{item.text}}</a>
                         </li>
                     </ul>
                 </nav>
@@ -49,11 +43,11 @@ export default {
                         shop
                     </h4>
                     <ul>
-                        <li>
-                            <a href="#">Shop DC</a>
-                        </li>
-                        <li>
-                            <a href="#">Shop DC Collectibles</a>
+                        <li
+                        v-for="(item, index) in navShop"
+                        :key="index"
+                        >
+                            <a :href="item.href">{{item.text}}</a>
                         </li>
                     </ul>
                 </nav>
@@ -64,62 +58,14 @@ export default {
                         dc
                     </h4>
                     <ul>
-                        <li>
-                            <a href="#">
-                                Terms Of Use
+                        <li
+                        v-for="(item, index) in navDc"
+                        :key="index"
+                        >
+                            <a :href="item.href">
+                                {{item.text}}
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                Privacy policy (New)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Ad Choices
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Advertising
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Jobs
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Subscriptions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Talent Workshops
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                CPSC Certificates
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Ratings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Shop Help
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Contact Us
-                            </a>
-                        </li>
-                -
                     </ul>
                 </nav>
             </div>
@@ -129,20 +75,11 @@ export default {
                         sites
                     </h4>
                     <ul>
-                        <li>
-                            <a href="#">DC</a>
-                        </li>
-                        <li>
-                            <a href="#">MAD Magazine</a>
-                        </li>
-                        <li>
-                            <a href="#">DC Kids</a>
-                        </li>
-                        <li>
-                            <a href="#">DC Universe</a>
-                        </li>
-                        <li>
-                            <a href="#">DC Power Visa</a>
+                        <li
+                        v-for="(item, index) in navSites"
+                        :key="index"
+                        >
+                            <a :href="item.href">{{item.text}}</a>
                         </li>
                     </ul>
                 </nav>

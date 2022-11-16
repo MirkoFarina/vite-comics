@@ -1,50 +1,10 @@
 <script>
+import navHeader from '../data/nav-header';
 export default {
   name: "HeaderApp",
   data(){
     return {
-      navHeader: [
-        {
-          text: 'characters',
-          current: false
-        },
-        {
-          text: 'comics',
-          current: true
-        },
-        {
-          text: 'movies',
-          current: false
-        },
-        {
-          text: 'tv',
-          current: false
-        },
-        {
-          text: 'games',
-          current: false
-        },
-        {
-          text: 'collectibles',
-          current: false
-        },
-        {
-          text: 'videos',
-          current: false
-        },
-        {
-          text: 'fans',
-          current: false
-        },
-        {
-          text: 'news',
-          current: false
-        },
-        {
-          text: 'shop',
-          current: false
-        }
-      ]
+      navHeader
     }
   }
 };
@@ -65,7 +25,7 @@ export default {
           >
             <a 
             :class="{'active' : link.current}" 
-            href="#"> 
+            :href="link.href"> 
                 {{link.text}} 
             </a>
           </li>

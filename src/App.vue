@@ -16,9 +16,7 @@ export default {
     
     <HeaderApp />
     <MainApp />
-   
     <FooterApp />
-    
 </template>
 
 
