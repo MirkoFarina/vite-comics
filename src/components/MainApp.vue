@@ -56,6 +56,7 @@ export default {
 .jumbotron {
   height: 400px;
   background-image: url("../assets/img/jumbotron.jpg");
+  background-size: cover;
 }
 
 section {
