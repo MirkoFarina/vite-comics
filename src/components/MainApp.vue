@@ -1,5 +1,6 @@
 <script>
 import dataCard from "../data/dc-comics";
+import CardMain from "./CardMain.vue";
 export default {
   name: "MainApp",
   data() {
@@ -7,6 +8,9 @@ export default {
       dataCard,
     };
   },
+  components: {
+    CardMain
+  }
 };
 </script>
 
@@ -18,24 +22,13 @@ export default {
         <div class="container">
             <h2 class="rectangle">CURRENT SERIES</h2>
             <div class="row">
-                <div 
+                <CardMain  
                 v-for="(card, index) in dataCard" 
                 :key="index" 
-                class="card">
-                    <div class="top">
-                        <img :src="card.thumb" :alt="card.series" />
-                        <div class="content">
-                            <h5>
-                                PREZZO: {{card.price}}
-                            </h5>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <h3>
-                            {{ card.series }}
-                        </h3>
-                    </div>
-                </div>
+                :cardThumb="card.thumb"
+                :cardSeries="card.series"
+                :cardPrice="card.price"
+                />
             </div>
         </div>
         <div class="load-more">
@@ -51,7 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "../styles/partials/mixins" as *;
-@use "../styles/partials/variables" as *;
+
 
 .jumbotron {
   height: 400px;
@@ -75,43 +68,6 @@ section {
 .row {
   display: flex;
   flex-wrap: wrap;
-  .card {
-    width: calc(100% / 6 - 10px);
-    padding: 30px 10px;
-    cursor: pointer;
-    &:hover .top{
-        img {
-            transform: scale(1.2);
-        }
-        .content {
-            display: block;
-        }
-    }
-  }
-}
-.top {
-  height: 170px;
-  overflow: hidden;
-  position: relative;
-  img {
-    width: 100%;
-  }
-}
-
-.content {
-    background-color: $primary-color;
-    position: absolute;
-    display: none;
-    bottom: 0;
-    left: 0;
-    padding: 10px 20px;
-}
-.bottom {
-  margin-top: 10px;
-  h3  {
-    font-size: .9rem;
-    font-weight: 400;
-  }
 }
 
 .load-more {
