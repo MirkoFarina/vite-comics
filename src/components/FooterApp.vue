@@ -1,11 +1,18 @@
 <script>
+import StylizedNavBar from "./StylizedNavBar.vue";
+import WhereFindUs from "./WhereFindUs.vue";
 export default {
-    name:'FooterApp'
+    name:'FooterApp',
+    components: {
+        StylizedNavBar,
+        WhereFindUs
+    }
 }
 </script>
 
 
 <template>
+    <StylizedNavBar />
     <footer>
         <div class="container">
             <div class="col">
@@ -145,6 +152,7 @@ export default {
             <img src="../assets/img/dc-logo-bg.png" alt="">
         </div>
     </footer>
+    <WhereFindUs />
 </template>
 
 

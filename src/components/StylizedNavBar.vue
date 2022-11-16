@@ -91,17 +91,6 @@ export default {
                 }
             }
            }
-            .card {
-                color: white;
-                
-                @include centerFlex('vertical');
-                img {
-                    transform: scale(.5);
-                }
-                span {
-                    text-transform: uppercase;
-                }
-            }
         }
     }
 </style>
